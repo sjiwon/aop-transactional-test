@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aop_tx_test?autoReconnect=true&characterEncoding=UTF8&serverTimeZone=Asia/Seoul
+    username: root
+    password: 1234
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: false
+        highlight_sql: true
+        default_batch_fetch_size: 50
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    org.springframework.orm.jpa.JpaTransactionManager: DEBUG
+    org.hibernate.resource.transaction: DEBUG
+    org.springframework.data.redis: DEBUG
